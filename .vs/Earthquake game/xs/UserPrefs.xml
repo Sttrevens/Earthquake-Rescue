@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UnitTypeSelectedUI.cs">
+    <Files>
+      <File FileName="Assets/Scripts/UnitControlSystem.cs" />
+      <File FileName="Assets/_/Stuff/Videos/TopDownShooter/Scripts/Player.cs" />
+      <File FileName="Assets/Scripts/Unit.cs" />
+      <File FileName="Assets/Scripts/UnitTypeSelectedUI.cs" Line="25" Column="9" />
+      <File FileName="Assets/Scripts/SpawnManager.cs" />
+      <File FileName="Assets/ModularCharacter/Scripts/MoveVelocity.cs" />
+      <File FileName="Assets/Scripts/AnimationController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Earthquake game" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
