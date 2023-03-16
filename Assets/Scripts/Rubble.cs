@@ -36,8 +36,10 @@ public class Rubble : MonoBehaviour
 
     private void OnRescue()
     {
+        Debug.Log("正常启动OnRescue");
         if (UnitControlSystem.Instance.IsRescuerSelected())
         {
+            Debug.Log("开始挖掘！");
             foreach (Unit unit in UnitControlSystem.Instance.selectedUnitList)
             {
                 if (unit is RescuerUnit rescuerUnit)

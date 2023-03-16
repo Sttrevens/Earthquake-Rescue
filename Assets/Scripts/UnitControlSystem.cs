@@ -85,8 +85,10 @@ public class UnitControlSystem : MonoBehaviour
 
     public bool IsRescuerSelected()
     {
+        Debug.Log("开始检测是不是搜救员1");
         foreach (Unit unit in selectedUnitList)
         {
+            Debug.Log("开始检测是不是搜救员2");
             if (unit is RescuerUnit)
             {
                 return true;
