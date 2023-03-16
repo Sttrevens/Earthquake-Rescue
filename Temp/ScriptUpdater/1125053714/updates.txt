@@ -1,2 +1,0 @@
-Temp/ScriptUpdater/1125053714/1626073019_EnableLights.cs => Assets/_/Stuff/Videos/TopDownShooter/Scripts/EnableLights.cs
-Temp/ScriptUpdater/1125053714/1354801488_ItemWorld.cs => Assets/_/Stuff/Videos/Inventory/Scripts/ItemWorld.cs

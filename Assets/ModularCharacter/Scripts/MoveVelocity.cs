@@ -34,7 +34,7 @@ public class MoveVelocity : MonoBehaviour, IMoveVelocity {
     private void FixedUpdate() {
         rigidbody2D.velocity = velocityVector * moveSpeed;
 
-        characterBase.PlayMoveAnim(velocityVector);
+//        characterBase.PlayMoveAnim(velocityVector);
     }
 
     public void Disable() {

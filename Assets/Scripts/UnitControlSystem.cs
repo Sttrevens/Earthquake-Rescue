@@ -5,14 +5,25 @@ using CodeMonkey.Utils;
 
 public class UnitControlSystem : MonoBehaviour
 {
+    public static UnitControlSystem Instance;
+
     [SerializeField] private Transform selectionAreaTransform;
     private Vector3 startPosition;
-    private List<Unit> selectedUnitList;
+    public List<Unit> selectedUnitList;
 
     private void Awake()
     {
         selectedUnitList = new List<Unit>();
         selectionAreaTransform.gameObject.SetActive(false);
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     private void Update()
@@ -59,7 +70,7 @@ public class UnitControlSystem : MonoBehaviour
                     selectedUnitList.Add(unit);
                 }
             }
-            Debug.Log(selectedUnitList.Count);
+            //Debug.Log(selectedUnitList.Count);
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -70,5 +81,29 @@ public class UnitControlSystem : MonoBehaviour
                 unit.MoveTo(moveToPosition);
             }
         }
+    }
+
+    public bool IsRescuerSelected()
+    {
+        foreach (Unit unit in selectedUnitList)
+        {
+            if (unit is RescuerUnit)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool IsDoctorSelected()
+    {
+        foreach (Unit unit in selectedUnitList)
+        {
+            if (unit is DoctorUnit)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

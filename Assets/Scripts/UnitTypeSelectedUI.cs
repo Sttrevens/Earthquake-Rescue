@@ -17,10 +17,10 @@ public class UnitTypeSelectedUI : MonoBehaviour
 
         SpawnTypeListSO spawnTypeList = Resources.Load<SpawnTypeListSO>(typeof(SpawnTypeListSO).Name);
 
-        for (int i = 0; i < spawnTypeList.list.Count; i++)
-        {
-            Debug.Log("Element at index " + i + ": " + spawnTypeList.list[i]);
-        }
+        //for (int i = 0; i < spawnTypeList.list.Count; i++)
+        //{
+        //    Debug.Log("Element at index " + i + ": " + spawnTypeList.list[i]);
+        //}
 
         buttonTransformDictionary = new Dictionary<SpawnTypeSO, Transform>();
 
