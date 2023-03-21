@@ -70,6 +70,7 @@
     <Compile Include="Assets/_/Base/BaseScripts/Characters/CharacterWaypointsHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
     <Compile Include="Assets/_/Stuff/Videos/TaskSystem/CM_Worker.cs" />
+    <Compile Include="Assets/Scripts/Rubble.cs" />
     <Compile Include="Assets/Scripts/SpawnTypeSO.cs" />
     <Compile Include="Assets/_/Stuff/Videos/Tilemap/TilemapVisual.cs" />
     <Compile Include="Assets/ModularCharacter/Scripts/MovePositionDirect.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Assets/_/Stuff/Videos/CraftingSystem/Scripts/UI_ItemSlot.cs" />
     <Compile Include="Assets/_/Stuff/Videos/Graph/Scripts/Window_Graph_Object.cs" />
     <Compile Include="Assets/CodeMonkey/Utils/UI_Sprite.cs" />
+    <Compile Include="Assets/Scripts/RescuerUnit.cs" />
     <Compile Include="Assets/_/Base/BaseScripts/Characters/CharacterSwordHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/_/Base/BaseScripts/Characters/PlayerPunch.cs" />
@@ -241,6 +243,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
     <Compile Include="Assets/_/Stuff/Videos/HotkeyBar/Scripts/HotkeyAbilitySystem.cs" />
     <Compile Include="Assets/_/Stuff/Videos/TopDownShooter/Scripts/ShieldField.cs" />
+    <Compile Include="Assets/Scripts/Survivor.cs" />
     <Compile Include="Assets/_/Stuff/Videos/TopDownShooter/Scripts/DoorOpenTrigger.cs" />
     <Compile Include="Assets/_/Stuff/GridPathfinding/GridPathfinding.cs" />
     <Compile Include="Assets/Scripts/CameraHandler.cs" />
@@ -292,6 +295,7 @@
     <Compile Include="Assets/_/Stuff/Videos/BRT_GuestSpritesheet/Scripts/GuestHandler.cs" />
     <Compile Include="Assets/_/Base/BaseScripts/Characters/PlayerPositionMovement.cs" />
     <Compile Include="Assets/_/Stuff/Videos/FieldOfView/Scripts/FieldOfView.cs" />
+    <Compile Include="Assets/Scripts/DoctorUnit.cs" />
     <Compile Include="Assets/_/Stuff/Videos/MeshUtils.cs" />
     <Compile Include="Assets/Scripts/Unit.cs" />
     <Compile Include="Assets/_/Stuff/Videos/CraftingSystem/Scripts/UI_ItemDrag.cs" />
@@ -392,10 +396,6 @@
     <Compile Include="Assets/_/Stuff/Scripts/Shoot_Flash.cs" />
     <Compile Include="Assets/_/Stuff/Videos/QuestPointer/Scripts/QuestPointer_GameHandler.cs" />
     <Compile Include="Assets/Scripts/ResourceTypeListSO.cs" />
-    <Compile Include="Assets/Scripts/Rubble.cs" />
-    <Compile Include="Assets/Scripts/RescuerUnit.cs" />
-    <Compile Include="Assets/Scripts/DoctorUnit.cs" />
-    <Compile Include="Assets/Scripts/Survivor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/_/Stuff/Shaders/VertexLitCG.shader" />
