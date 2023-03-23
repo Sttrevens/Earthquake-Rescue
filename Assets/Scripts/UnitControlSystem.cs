@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using UnitDetection;
 
 public class UnitControlSystem : MonoBehaviour
 {
@@ -89,8 +90,10 @@ public class UnitControlSystem : MonoBehaviour
         foreach (Unit unit in selectedUnitList)
         {
             Debug.Log("开始检测是不是搜救员2");
-            if (unit is RescuerUnit)
+            Debug.Log(unit);
+            if (unit.ToString() == "Fireman(Clone) (UnitDetection.Unit)")
             {
+                Debug.Log("有搜救员！");
                 return true;
             }
         }

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   survivorPrefab: {fileID: 4420250244006096003, guid: 709139bbb284f42acb766de0341eea98, type: 3}
   survivorProbability: 0.5
+  rescuerPrefab: {fileID: 3072097933690095633, guid: bd21b2e9967054dbb8caf5a14ba265b8, type: 3}
 --- !u!60 &945368970694033687
 PolygonCollider2D:
   m_ObjectHideFlags: 0

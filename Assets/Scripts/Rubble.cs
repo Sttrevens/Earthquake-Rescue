@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnitDetection;
 
 public class Rubble : MonoBehaviour
 {
@@ -10,25 +11,40 @@ public class Rubble : MonoBehaviour
 
     private bool hasSurvivor;
 
+    public GameObject rescuerPrefab;
+    private GameObject instantiatedRescuer;
+    private RescuerUnit rescuerUnit;
+
     private void Start()
     {
         hasSurvivor = UnityEngine.Random.value < survivorProbability;
+        RescuerUnit rescuerUnit = new RescuerUnit();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            Debug.Log("按Q有用");
+            //Debug.Log("按Q有用");
 
             if (hit.collider != null)
             {
                 Rubble rubble = hit.collider.GetComponent<Rubble>();
+                //RescuerUnit rescuerUnit = new RescuerUnit();
                 if (rubble != null)
                 {
-                    Debug.Log("检测到了rubble");
-                    OnRescue();
+                    UnitControlSystem unitControlSystem = UnitControlSystem.Instance;
+                    foreach (Unit unit in unitControlSystem.selectedUnitList)
+                    {
+                        if (unit is rescuerUnit || unit.ToString() == "Fireman(Clone) (UnitDetection.Unit)")
+                        {
+                            //instantiatedRescuer = Instantiate(rescuerPrefab);
+                            //rescuerUnit = instantiatedRescuer.AddComponent<RescuerUnit>();
+                            rescuerUnit.StartRescueTask(this);
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -42,8 +58,10 @@ public class Rubble : MonoBehaviour
             Debug.Log("开始挖掘！");
             foreach (Unit unit in UnitControlSystem.Instance.selectedUnitList)
             {
-                if (unit is RescuerUnit rescuerUnit)
+                if (unit.ToString() == "Fireman(Clone) (UnitDetection.Unit)")
                 {
+                    instantiatedRescuer = Instantiate(rescuerPrefab);
+                    rescuerUnit = instantiatedRescuer.AddComponent<RescuerUnit>();
                     rescuerUnit.StartRescueTask(this);
                     break;
                 }
