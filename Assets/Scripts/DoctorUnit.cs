@@ -31,5 +31,30 @@ namespace UnitDetection
             // 恢复行动力属性值
             // RestoreActionPoints();
         }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+                if (hit.collider != null)
+                {
+                    Survivor survivor = hit.collider.GetComponent<Survivor>();
+                    if (survivor != null)
+                    {
+                        UnitControlSystem unitControlSystem = UnitControlSystem.Instance;
+                        foreach (Unit unit in UnitControlSystem.Instance.selectedUnitList)
+                        {
+                            if (unit.ToString() == "body_nurse(Clone) (UnitDetection.DoctorUnit)")
+                            {
+                                StartHealTask(survivor);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

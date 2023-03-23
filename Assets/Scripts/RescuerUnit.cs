@@ -1,5 +1,4 @@
 using System.Collections;
-//using System.Numerics;
 using UnityEngine;
 
 namespace UnitDetection
@@ -11,7 +10,16 @@ namespace UnitDetection
 
         public void StartRescueTask(Rubble rubble)
         {
-            StartCoroutine(PerformRescueTask(rubble));
+            float distance = Vector3.Distance(transform.position, rubble.transform.position);
+
+            if (distance <= 5f)
+            {
+                StartCoroutine(PerformRescueTask(rubble));
+            }
+            else
+            {
+                Debug.Log("搜救员距离废墟太远，无法进行搜救。");
+            }
         }
 
         private IEnumerator PerformRescueTask(Rubble rubble)
