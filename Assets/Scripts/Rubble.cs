@@ -14,6 +14,7 @@ public class Rubble : MonoBehaviour
     public GameObject rescuerPrefab;
     private GameObject instantiatedRescuer;
     private RescuerUnit rescuerUnit;
+    private bool isSelected = false;
 
     private void Start()
     {
@@ -21,34 +22,7 @@ public class Rubble : MonoBehaviour
         RescuerUnit rescuerUnit = new RescuerUnit();
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            //Debug.Log("按Q有用");
-
-            if (hit.collider != null)
-            {
-                Rubble rubble = hit.collider.GetComponent<Rubble>();
-                //RescuerUnit rescuerUnit = new RescuerUnit();
-                if (rubble != null)
-                {
-                    UnitControlSystem unitControlSystem = UnitControlSystem.Instance;
-                    foreach (Unit unit in unitControlSystem.selectedUnitList)
-                    {
-                        if (unit is rescuerUnit || unit.ToString() == "Fireman(Clone) (UnitDetection.Unit)")
-                        {
-                            //instantiatedRescuer = Instantiate(rescuerPrefab);
-                            //rescuerUnit = instantiatedRescuer.AddComponent<RescuerUnit>();
-                            rescuerUnit.StartRescueTask(this);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
 
     private void OnRescue()
     {
@@ -71,13 +45,13 @@ public class Rubble : MonoBehaviour
 
     public void OnRescueCompleted()
     {
-        if (hasSurvivor)
-        {
-            // 生成幸存者并设置其位置
-            GameObject survivor = Instantiate(survivorPrefab, transform.position, Quaternion.identity);
-        }
+            if (hasSurvivor)
+            {
+                // 生成幸存者并设置其位置
+                GameObject survivor = Instantiate(survivorPrefab, transform.position, Quaternion.identity);
+            }
 
-        // 销毁废墟
-        Destroy(gameObject);
+            // 销毁废墟
+            Destroy(gameObject);
     }
 }
