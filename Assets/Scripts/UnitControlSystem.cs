@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 using UnitDetection;
+using TMPro;
+using UnityEngine.UI;
 
 public class UnitControlSystem : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class UnitControlSystem : MonoBehaviour
     [SerializeField] private Transform selectionAreaTransform;
     private Vector3 startPosition;
     public List<Unit> selectedUnitList;
+
+    public TextMeshProUGUI distanceWarningText;
 
     private void Awake()
     {
@@ -25,7 +29,33 @@ public class UnitControlSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        distanceWarningText = GameObject.Find("DistanceWarningText").GetComponent<TextMeshProUGUI>();
+        distanceWarningText.gameObject.SetActive(false);
+        if (distanceWarningText == null)
+        {
+            Debug.Log("jiba");
+        }
     }
+
+    public void showdistanceRescueText()
+    {
+        distanceWarningText.text = "Too far for rescue!";
+        StartCoroutine(HideDistanceWarningTextAfterDelay(3f));
+    }
+
+    IEnumerator HideDistanceWarningTextAfterDelay(float delay)
+    {
+        distanceWarningText.gameObject.SetActive(true); // 显示文本
+        yield return new WaitForSeconds(delay); // 等待指定的延迟时间
+        distanceWarningText.gameObject.SetActive(false); // 隐藏文本
+    }
+
+    public void hidedistanceText()
+    {
+        distanceWarningText.gameObject.SetActive(false);
+    }
+
     // Update is called once per frame
     private void Update()
     {

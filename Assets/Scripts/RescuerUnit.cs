@@ -1,16 +1,30 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace UnitDetection
 {
     public class RescuerUnit : Unit
     {
-        public GameObject rescuerPrefab;
-        private GameObject instantiatedRescuer;
+        //private TextMeshProUGUI distanceWarningText;
+
+        void Start()
+        {
+            //    distanceWarningText = GameObject.Find("DistanceWarningText").GetComponent<TextMeshProUGUI>();
+            //    distanceWarningText.gameObject.SetActive(false);
+            //    if (distanceWarningText == null)
+            //    {
+            //        Debug.Log("jiba");
+            //    }
+            
+        }
 
         public void StartRescueTask(Rubble rubble)
         {
             float distance = Vector3.Distance(transform.position, rubble.transform.position);
+
+            UnitControlSystem controlSystem = GameObject.Find("UnitControlSystem").GetComponent<UnitControlSystem>();
 
             if (distance <= 5f)
             {
@@ -18,7 +32,11 @@ namespace UnitDetection
             }
             else
             {
-                Debug.Log("搜救员距离废墟太远，无法进行搜救。");
+                if (controlSystem == null)
+                {
+                    Debug.Log("jiba");
+                }
+                controlSystem.showdistanceRescueText();
             }
         }
 

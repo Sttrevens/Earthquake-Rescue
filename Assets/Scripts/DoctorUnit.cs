@@ -15,6 +15,10 @@ namespace UnitDetection
             {
                 StartCoroutine(Heal(survivor));
             }
+            else
+            {
+                Debug.Log("医生距离废墟太远，无法进行治疗。");
+            }
         }
 
         private IEnumerator Heal(Survivor survivor)
